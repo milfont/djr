@@ -1,3 +1,3 @@
 module Djr
-  VERSION = "0.0.2beta"
+  VERSION = "0.0.2"
 end
