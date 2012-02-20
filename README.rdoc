@@ -14,4 +14,4 @@ Description goes here.
 
 ## License
 
-MIT License. Copyright (c) 2012 Milfont. http://milfont.org
+MIT License. Copyright (c) 2012 Milfont Consulting. http://milfont.org
