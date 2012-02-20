@@ -12,9 +12,7 @@ Run the bundle command to install it.
 Configure assets in app/assets/application.js file:
 
 //= require jquery
-
 //= require djr
-
 //= require_tree .
 
 Import script in your pages:
@@ -24,6 +22,7 @@ Import script in your pages:
 In javascript, call your Controller like:
 
 productsController = new ProductsController
+
 productsController.save({
 	name: "IPhone 4s",
 	value: "500.00"
