@@ -12,7 +12,9 @@ Run the bundle command to install it.
 Configure assets in app/assets/application.js file:
 
 //= require jquery
+
 //= require djr
+
 //= require_tree .
 
 Import script in your pages:
