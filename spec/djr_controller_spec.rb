@@ -32,6 +32,32 @@ describe DjrController, :type => :controller do
     
   end
   
+  context "When Controller has null" do
+    
+    before do
+      
+      ActionController::Base.asset_host = "/"
+      
+      routes = Rails.application.routes
+      routes.disable_clear_and_finalize = true
+      routes.clear!
+      Rails.application.routes_reloader.paths.each { |path| load(path) }
+      routes.draw do
+        match "/products" => "products#index"
+      end
+      routes.disable_clear_and_finalize = false
+      routes.finalize!
+
+      @generated_javascript = ";DjrController = function(){DJR.call(this);}; DjrController.prototype.routes = {};ProductsController = function(){DJR.call(this);}; ProductsController.prototype.routes = {}; DjrController.prototype.routes['djr'] = {url: \"/djr(.:format)\", method: \"GET\" }; ProductsController.prototype.routes['index'] = {url: \"/products(.:format)\", method: \"GET\" };"
+    end
+    
+    it "Should generate without errors because assets route" do
+      get :djr
+      response.body.should ==  @generated_javascript
+    end
+    
+  end
+  
   
   context "When Controller has module" do
     
