@@ -5,7 +5,10 @@ DJR (Direct jQuery Remoting) will generate the JavaScript code from Rails Contro
 ## Getting started
 
 Add it to your Gemfile with:
-	gem 'djr'
+
+```ruby
+gem 'djr'
+```
 
 Run the bundle command to install it.
 
