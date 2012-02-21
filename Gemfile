@@ -9,5 +9,5 @@ group :development, :test do
   gem 'simplecov'
   gem 'shoulda'
   gem "rdoc",        "3.12"
-  gem "bundler"
+  gem "bundler",     "1.0.22"
 end
