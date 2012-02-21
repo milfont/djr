@@ -1,7 +1,6 @@
 ## Build
 [![Build Status](https://secure.travis-ci.org/milfont/djr.png)](http://travis-ci.org/milfont/djr)
 
-
 ## DJR
 
 DJR (Direct jQuery Remoting) will generate the JavaScript code from Rails Controllers to allow browsers to securely call into Ruby code almost as if it was running locally
