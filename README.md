@@ -56,7 +56,10 @@ class ProductsController < ApplicationController
     respond_to :html, :json
     
     def index
-        @products = Product.find params[:id] 
+		@query = params[:query]
+        @products = Product.search do
+			fulltext @query
+		end
         respond_with @products
     end
     
