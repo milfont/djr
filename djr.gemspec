@@ -13,7 +13,9 @@ Gem::Specification.new do |s|
 
   s.rubyforge_project = "djr"
 
-  s.files         = `git ls-files`.split("\n")
+  #s.files         = `git ls-files`.split("\n")
+  s.files         = ['Gemfile', 'Rakefile', 'app/controllers/djr_controller.rb', 'config/routes.rb', 'djr.gemspec', 'lib/djr.rb',
+                      'lib/djr/version.rb', 'lib/engine.rb', 'vendor/assets/javascripts/djr.js']
   s.test_files    = `git ls-files -- {test,spec,features}/*`.split("\n")
   s.executables   = `git ls-files -- bin/*`.split("\n").map{ |f| File.basename(f) }
   s.require_paths = ["lib"]
