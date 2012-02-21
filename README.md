@@ -37,6 +37,22 @@ productsController.save({
 }, callbackFunction);
 ```
 
+Your controller should be something like that:
+
+```ruby
+class ProductsController < ApplicationController
+    
+    respond_to :html, :json
+    
+    def index
+        @products = Product.find params[:id] 
+        respond_with @products
+    end
+    
+end
+```
+
+
 ## Conventions
 
 ```javascript
