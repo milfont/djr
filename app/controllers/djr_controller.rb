@@ -1,4 +1,4 @@
-class DjrController < ApplicationController
+class DjrController < ActionController::Base
   
   def djr
     
