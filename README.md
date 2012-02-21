@@ -22,7 +22,9 @@ Configure assets in app/assets/application.js file:
 
 Import script in your pages:
 
+```html
 <script type="text/javascript" charset="utf-8" src="/djr"></script>
+```
 
 In javascript, call your Controller like:
 
@@ -37,8 +39,9 @@ productsController.save({
 
 ## Conventions
 
+```javascript
 controller.action( dataAsJson, callbackFunction, errorHandler );
-
+```
 
 ## License
 
