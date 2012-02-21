@@ -35,6 +35,17 @@ productsController.save({
 	name: "IPhone 4s",
 	value: "500.00"
 }, callbackFunction);
+
+//or more complete
+
+productsController.index({
+	query: "IPhone"
+}, function(productsListAsJson){
+	showProductsFunction(productsListAsJson);
+}, function(error) {
+	errorHandler(error);
+});
+
 ```
 
 Your controller should be something like that:
