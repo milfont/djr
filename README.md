@@ -1,6 +1,6 @@
 ## DJR
 
-DJR (Direct jQuery Remoting, inspired in DWR [http://directwebremoting.org/dwr/index.html]) will generate the JavaScript code from Rails Controllers to allow browsers to securely call into Ruby code almost as if it was running locally
+DJR (Direct jQuery Remoting) will generate the JavaScript code from Rails Controllers to allow browsers to securely call into Ruby code almost as if it was running locally
 
 ## Getting started
 
