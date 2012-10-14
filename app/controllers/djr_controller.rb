@@ -31,7 +31,7 @@ class DjrController < ActionController::Base
     if route.defaults[:controller].present?
       method = route.conditions[:request_method].present? ? route.conditions[:request_method].source[1..-2] : "GET"
       controller_name = "#{route.defaults[:controller].camelize.gsub(/\:\:/, '.')}Controller"
-      " #{controller_name}.prototype.routes['#{route.defaults[:action]}'] = {url: \"#{route.path}\", method: \"#{method}\" };"
+      " #{controller_name}.prototype.routes['#{route.defaults[:action]}'] = {url: \"#{route.path.ast}\", method: \"#{method}\" };"
     else
       nil
     end
