@@ -22,9 +22,9 @@ var DJR = function() {
     this.errorDefault    = function(error) {
         this.error = error;
     };
-    this.ajax = function(object, callback, error, method, url, params) {
+    this.ajax = function(object, callback, error, method, url, scope) {
         var self = this;
-        var params = params || [];
+        var params = [];
         params["\(.:format\)"] = this.format;
 
         if(method === "")
@@ -41,7 +41,7 @@ var DJR = function() {
         if(method === "DELETE") object = null;
 
         jQuery.ajax({
-            context     : self,
+            context     : scope || self,
             data        : object,
             cache       : false,
             dataType    : 'json',
@@ -55,7 +55,7 @@ var DJR = function() {
     };
     for (var action in this.routes) {
         this[action] = function(act) {
-            return function(object, callback, error) {
+            return function(object, callback, error, scope) {
                 if(typeof object === "function") {
                     callback = object;
                     error = callback;
@@ -67,7 +67,8 @@ var DJR = function() {
                           localCallback,
                           localErrorHandler,
                           this.routes[act].method,
-                          this.routes[act].url);
+                          this.routes[act].url,
+                          scope);
                 return this;
             }
         }(action);
