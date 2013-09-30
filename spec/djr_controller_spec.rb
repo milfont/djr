@@ -13,7 +13,7 @@ describe DjrController, :type => :controller do
       routes.clear!
       Rails.application.routes_reloader.paths.each { |path| load(path) }
       routes.draw do
-        match "/products" => "products#index"
+        match "/products" => "products#index", :via => :GET
       end
       routes.disable_clear_and_finalize = false
       routes.finalize!
@@ -43,7 +43,7 @@ describe DjrController, :type => :controller do
       routes.clear!
       Rails.application.routes_reloader.paths.each { |path| load(path) }
       routes.draw do
-        match "/products" => "products#index"
+        match "/products" => "products#index", :via => :GET
       end
       routes.disable_clear_and_finalize = false
       routes.finalize!
