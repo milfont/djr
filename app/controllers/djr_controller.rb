@@ -13,7 +13,7 @@ class DjrController < ActionController::Base
     }.compact.join
     js << routes.map { |route| mapped_actions route }.compact.join
     
-    render :text => js.to_s
+    render :js => js.to_s
     
   end
   
